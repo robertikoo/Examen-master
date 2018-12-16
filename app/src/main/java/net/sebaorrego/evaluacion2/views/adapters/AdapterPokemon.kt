@@ -77,7 +77,7 @@ class AdapterPokemon(val miLista:ArrayList<Pokemon>?) : RecyclerView.Adapter<Ada
                     valor = 1
                 }
 
-                alerta.setMessage("¿Estás seguro que quieres $estado Pokemon?")
+                alerta.setMessage("¿Estás seguro que quieres $estado Pokemon2?")
                 alerta.setPositiveButton("Si", { dialog, which ->
                     val db = ConexionSQL(vista.context, null, 1)
                     poke.estado = valor

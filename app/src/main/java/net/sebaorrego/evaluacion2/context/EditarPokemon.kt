@@ -60,7 +60,7 @@ class EditarPokemon : AppCompatActivity() {
 
 
             if(TextUtils.isEmpty(nombrePokeEdit.text.toString())){
-                nombrePokeEdit.error = "Ingrese Pokemon"
+                nombrePokeEdit.error = "Ingrese Pokemon2"
                 return@setOnClickListener
             }else{
                 nombrePokemon = nombrePokeEdit.text.toString()

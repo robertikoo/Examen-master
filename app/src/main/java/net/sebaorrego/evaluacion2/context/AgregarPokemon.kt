@@ -47,7 +47,7 @@ class AgregarPokemon : AppCompatActivity() {
         btnAgregarPoke.setOnClickListener {
 
             if(TextUtils.isEmpty(txtNombrePoke.text.toString())){
-                txtNombrePoke.error = "Ingrese Pokemon"
+                txtNombrePoke.error = "Ingrese Pokemon2"
                 return@setOnClickListener
             }else{
                 nombrePokemon = txtNombrePoke.text.toString()

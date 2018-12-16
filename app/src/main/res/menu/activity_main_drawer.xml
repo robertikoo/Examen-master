@@ -5,6 +5,11 @@
 
     <group android:checkableBehavior="single" android:layout_height="match_parent">
         <item
+                android:id="@+id/pokemon_list"
+                android:icon="@drawable/list"
+                android:title="@string/lista_pokemones"/>
+
+        <item
                 android:id="@+id/nav_habilidades"
                 android:icon="@drawable/list"
                 android:title="Habilidades"/>

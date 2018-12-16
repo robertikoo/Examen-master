@@ -25,15 +25,15 @@ class EditarLista : AppCompatActivity() {
         listarSpinner()
         var idLista = intent.getIntExtra("idLista",0)
         val db = ConexionSQL(this, null, 1)
-        var lista : Lista? = db.buscarLista(idLista)
+        val lista : Lista? = db.buscarLista(idLista)
 
-        var pokemon : Pokemon? = db.buscarPokemon(lista!!.idPokemon)
-        var tipo : Tipo? = db.buscarTipo(lista!!.idTipo)
-        var habilidad: Habilidad? = db.buscarHabilidad(lista!!.idHabilidad)
+        val pokemon : Pokemon? = db.buscarPokemon(lista!!.idPokemon!!)
+        val tipo : Tipo? = db.buscarTipo(lista.idTipo!!)
+        val habilidad: Habilidad? = db.buscarHabilidad(lista.idHabilidad!!)
 
-        var nombreListaEdit :TextView = findViewById(R.id.txtNombreListaEdit)
-        var cantEdit : TextView = findViewById(R.id.txtCantidadEdit)
-        var valorEdit :TextView  = findViewById(R.id.txtValorPEdit)
+        val nombreListaEdit :TextView = findViewById(R.id.txtNombreListaEdit)
+        val cantEdit : TextView = findViewById(R.id.txtCantidadEdit)
+        val valorEdit :TextView  = findViewById(R.id.txtValorPEdit)
 
 
         nombreListaEdit.text = lista.nombre

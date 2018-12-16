@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     if (response.isSuccessful()) {
 
                         PokemonRespuesta pokemonRespuesta = response.body();
-                        ArrayList<Pokemon> listaPokemon = pokemonRespuesta.getResults();
+                        ArrayList<Pokemon2> listaPokemon = pokemonRespuesta.getResults();
 
                         listaPokemonAdapter.adicionarListaPokemon(listaPokemon);
 
@@ -122,7 +122,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         var conn = ConexionSQL(this, null, 1)
-        if (conn.listarTipo().size>0 && conn.listarPokemon().size>0 ){
+        if (conn.listarTipo().size > 0 && conn.listarPokemon().size > 0) {
             fab.visibility = View.GONE
         }
 
@@ -141,7 +141,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             conn.insertarHabilidad(hab1)
 
 
-
             val c = Calendar.getInstance()
             val anio = c.get(Calendar.YEAR)
             val mes = c.get(Calendar.MONTH)
@@ -156,10 +155,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .setAction("Action", null).show()
         }
 
-            val toggle = ActionBarDrawerToggle(
+        val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar,
-                R.string.navigation_drawer_open,
-                R.string.navigation_drawer_close
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
         )
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
@@ -169,7 +168,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         var fm = supportFragmentManager
         var ft = fm.beginTransaction()
         var miFrag = FragmentPortada()
-        ft.replace(R.id.fragLay,miFrag)
+        ft.replace(R.id.fragLay, miFrag)
         ft.commit()
     }
 
@@ -204,17 +203,24 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         // Handle navigation view item clicks here.
         when (item.itemId) {
+            R.id.pokemon_list -> {
+                val miFrag = PokemonesFragment()
+                ft.replace(R.id.fragLay, miFrag)
+                ft.commit()
+            }
+
+
             R.id.nav_habilidades -> {
                 var miFrag = FragmentHabilidades()
                 miFrag.miContexto = this
-                ft.replace(R.id.fragLay,miFrag)
+                ft.replace(R.id.fragLay, miFrag)
                 ft.commit()
             }
 
             R.id.nav_tipos -> {
                 var miFrag = FragmentTipos()
                 miFrag.miContexto = this
-                ft.replace(R.id.fragLay,miFrag)
+                ft.replace(R.id.fragLay, miFrag)
                 ft.commit()
             }
 
@@ -222,21 +228,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 var miFrag = FragmentPokemones()
                 miFrag.miContexto = this
                 //miFrag.clientes = this.clientes
-                ft.replace(R.id.fragLay,miFrag)
+                ft.replace(R.id.fragLay, miFrag)
                 ft.commit()
             }
 
             R.id.nav_listas -> {
                 var miFrag = FragmentListas()
                 miFrag.miContexto = this
-                ft.replace(R.id.fragLay,miFrag)
+                ft.replace(R.id.fragLay, miFrag)
                 ft.commit()
             }
 
             R.id.nav_stock -> {
                 var miFrag = FragmentStock()
                 miFrag.miContexto = this
-                ft.replace(R.id.fragLay,miFrag)
+                ft.replace(R.id.fragLay, miFrag)
                 ft.commit()
             }
             R.id.nav_salir -> {

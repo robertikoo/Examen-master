@@ -58,7 +58,7 @@ class AdapterLista (val miLista:ArrayList<Lista>?) : RecyclerView.Adapter<Adapte
             persona.text = nombrePoke*/
 
 
-            var nombrePoke =  db.buscarPokemon(list.idPokemon)!!.nombrePokemon.toString()
+            var nombrePoke =  db.buscarPokemon(list.idPokemon!!)!!.nombrePokemon.toString()
             persona.text =nombrePoke
 
 
@@ -97,9 +97,9 @@ class AdapterLista (val miLista:ArrayList<Lista>?) : RecyclerView.Adapter<Adapte
             }
             boton2.setOnClickListener {
                 val db = ConexionSQL(vista.context, null, 1)
-                var pokee = db.buscarPokemon(list.idPokemon)
-                var tip = db.buscarTipo(list.idTipo)
-                var hab = db.buscarHabilidad(list.idHabilidad)
+                var pokee = db.buscarPokemon(list.idPokemon!!)
+                var tip = db.buscarTipo(list.idTipo!!)
+                var hab = db.buscarHabilidad(list.idHabilidad!!)
 
                 if(pokee!!.estado==1 && tip!!.estado==1){
                     var id = list.idLista

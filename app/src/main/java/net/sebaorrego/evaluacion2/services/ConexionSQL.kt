@@ -98,10 +98,10 @@ class ConexionSQL(val miContexto:Context,
             val result = db.insert("pokemon", null, cv)
             db.close()
             if (result == -1L){
-                Toast.makeText(miContexto, "Pokemon no agregado", Toast.LENGTH_SHORT).show()
+                Toast.makeText(miContexto, "Pokemon2 no agregado", Toast.LENGTH_SHORT).show()
 
             }else{
-                Toast.makeText(miContexto, "Pokemon agregado", Toast.LENGTH_SHORT).show()
+                Toast.makeText(miContexto, "Pokemon2 agregado", Toast.LENGTH_SHORT).show()
             }
         }catch (e:Exception){
             Toast.makeText(miContexto,  "Error ${e.message}", Toast.LENGTH_SHORT).show()
@@ -305,9 +305,9 @@ class ConexionSQL(val miContexto:Context,
             val args = arrayOf(id.toString())
             val result = db.delete("pokemon","idPokemon=?",args)
             if (result ==0){
-                Toast.makeText(miContexto,"Pokemon no eliminado- $args",Toast.LENGTH_SHORT).show()
+                Toast.makeText(miContexto,"Pokemon2 no eliminado- $args",Toast.LENGTH_SHORT).show()
             }else{
-                Toast.makeText(miContexto,"Pokemon eliminado",Toast.LENGTH_SHORT).show()
+                Toast.makeText(miContexto,"Pokemon2 eliminado",Toast.LENGTH_SHORT).show()
             }
         }catch (ex: SQLException){
             Toast.makeText(miContexto,"error ${ex.message}",Toast.LENGTH_SHORT).show()
@@ -394,9 +394,9 @@ class ConexionSQL(val miContexto:Context,
             val result = db.update("pokemon",cv,"idPokemon=?",args)
             db.close()
             if (result==0){
-                Toast.makeText(miContexto,"Pokemon no actualizado", Toast.LENGTH_SHORT).show()
+                Toast.makeText(miContexto,"Pokemon2 no actualizado", Toast.LENGTH_SHORT).show()
             }else{
-                Toast.makeText(miContexto,"Pokemon actualizado", Toast.LENGTH_SHORT).show()
+                Toast.makeText(miContexto,"Pokemon2 actualizado", Toast.LENGTH_SHORT).show()
             }
         }catch (ex: Exception){
             Toast.makeText(miContexto,"error ${ex.message}",Toast.LENGTH_SHORT).show()
