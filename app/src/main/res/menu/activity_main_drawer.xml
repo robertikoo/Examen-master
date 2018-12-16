@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single" android:layout_height="match_parent">
+        <item
+                android:id="@+id/nav_habilidades"
+                android:icon="@drawable/list"
+                android:title="Habilidades"/>
+        <item
+                android:id="@+id/nav_tipos"
+                android:icon="@drawable/list"
+                android:title="Tipos"/>
+        <item
+                android:id="@+id/nav_pokemones"
+                android:icon="@drawable/employee"
+                android:title="Pokemones"/>
+        <item
+                android:id="@+id/nav_listas"
+                android:icon="@drawable/c_codec"
+                android:title="Listas"/>
+    </group>
+
+    <item android:title="Servicios">
+        <menu>
+            <item
+                    android:id="@+id/nav_stock"
+                    android:icon="@drawable/rising"
+                    android:title="Stock"/>
+        </menu>
+    </item>
+    <item
+            android:title="Salir"
+            android:id="@+id/nav_salir"
+            android:icon="@android:drawable/ic_menu_close_clear_cancel"/>
+
+
+</menu>
