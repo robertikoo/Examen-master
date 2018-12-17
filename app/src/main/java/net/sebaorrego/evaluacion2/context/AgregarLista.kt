@@ -13,7 +13,6 @@ import net.sebaorrego.evaluacion2.entities.Lista
 import net.sebaorrego.evaluacion2.entities.Pokemon
 import net.sebaorrego.evaluacion2.entities.Tipo
 import net.sebaorrego.evaluacion2.services.ConexionSQL
-import net.sebaorrego.evaluacion2.services.Valores
 
 
 class AgregarLista : AppCompatActivity() {
@@ -41,8 +40,8 @@ class AgregarLista : AppCompatActivity() {
 */
 
         val Iva = 0.19
-        var valores = Valores()
-        var dolar = valores.dolar
+
+
 
         var valorDolar:Double = 0.0
         var valorConIva :Double = 0.0
@@ -51,39 +50,19 @@ class AgregarLista : AppCompatActivity() {
         var cant: Int = 0
 
 
-        btnCalcular.setOnClickListener {
-            precio = 0.0
-            dolar = valores.dolar
-
-            if(TextUtils.isEmpty(txtValorP.text.toString())){
-                txtValorP.error = "Ingrese Valor"
-                return@setOnClickListener
-            }else{
-                precio = txtValorP.text.toString().toDouble()
-            }
-
-            valorDolar = (precio/dolar)
-            valorConIva = (precio*Iva + precio)
-            lblPrecioConIva.text = "$$valorConIva"
-            lblValorDolar.text = "$valorDolar USD"
-        }
 
         btnAgregarLista.setOnClickListener {
+
+
             var pokemon = sp_pokemon.selectedItem as Pokemon
             var tipo = sp_tipo.selectedItem as Tipo
             var habilidad = sp_habilidad.selectedItem as Habilidad
 
-            precio = 0.0
-            dolar=valores.dolar
-            if(TextUtils.isEmpty(txtValorP.text.toString())){
-                txtValorP.error = "Ingrese Valor"
-                return@setOnClickListener
-            }else{
-                precio = txtValorP.text.toString().toDouble()
-            }
+
+
             // todo dato modificado
 
-            valorDolar = (precio/dolar)
+            valorDolar = precio
             valorConIva = (precio*Iva + precio)
 
             if(TextUtils.isEmpty(txtNombreLista.text.toString())){
@@ -92,12 +71,7 @@ class AgregarLista : AppCompatActivity() {
             }else{
                 nombreP = txtNombreLista.text.toString()
             }
-            if(TextUtils.isEmpty(txtCantidad.text.toString())){
-                txtCantidad.error = "Ingrese cantidad de la lista"
-                return@setOnClickListener
-            }else{
-                cant = txtCantidad.text.toString().toInt()
-            }
+
 
             var lista = Lista(
                 1,

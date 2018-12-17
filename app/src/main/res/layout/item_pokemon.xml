@@ -1,38 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content" android:orientation="vertical">
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
 
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:layout_weight="1">
-        <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:layout_weight="2">
-            <TextView
-                    android:text="TextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/lblNombreP" android:layout_weight="1"
-                    android:textAlignment="center"/>
-            <TextView
-                    android:text="TextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/lblFecha" android:layout_weight="1"
-                    android:textAlignment="center" android:textColor="@android:color/holo_red_dark"/>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+        <ImageView
+                android:id="@+id/fotoImageView"
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:layout_weight="0.8"
+                android:contentDescription="@string/imagen"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:layout_weight="1">
+            <ImageButton
+                    android:src="@drawable/boton_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnActualizarP"
+                    android:contentDescription="@string/imagen"/>
+            <Button
+                    android:text="@string/desactivar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnDesactivarP"/>
         </LinearLayout>
-        <ImageButton
-                android:src="@drawable/boton_edit"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:id="@+id/btnActualizarP"/>
-        <Button
-                android:text="@string/desactivar"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="0"
-                android:id="@+id/btnDesactivarP"/>
     </LinearLayout>
+    <TextView
+            android:id="@+id/lblNombreP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/app_name"
+            android:textAllCaps="true"/>
 </LinearLayout>

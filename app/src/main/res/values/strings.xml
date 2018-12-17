@@ -53,4 +53,6 @@
     <string name="Prueba">Prueba 2 Android</string>
     <string name="Integrantes">Sebastian Orrego - Benjamin Mora</string>
     <string name="lista_pokemones">Lista de Pokemones</string>
+    <string name="imagen">imagen</string>
+    <string name="search_pokemon">Buscar Pokemon</string>
 </resources>

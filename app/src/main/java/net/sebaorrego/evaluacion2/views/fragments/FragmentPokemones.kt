@@ -4,6 +4,7 @@ package net.sebaorrego.evaluacion2.views.fragments
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -30,7 +31,7 @@ class FragmentPokemones : Fragment() {
 
         var view = inflater.inflate(R.layout.fragment_pokemones, container, false)
 
-        val botonAgregar: Button = view.findViewById(R.id.btnAgregarP)
+        val botonAgregar: FloatingActionButton = view.findViewById(R.id.btnAgregarP)
         var list : RecyclerView = view.findViewById(R.id.lv_Pokemon)
 
         var conn = ConexionSQL(miContexto!!, null, 1)
